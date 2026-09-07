@@ -1,0 +1,5 @@
+owid-covid-data.csv
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+venv/

@@ -1,29 +1,61 @@
-COVID_TRACKER 
+# COVID-19 Global Tracker
 
-The project is a data analysis and reporting notebook that tracks global COVID-19 trends. The project will analyze cases, deaths, recoveries, and vaccinations across countries and time. 
-The project generates line charts, bar plots, pie charts, and choropleth maps to provide insights into the pandemic’s impact and vaccination progress.
+A Jupyter notebook that analyses global COVID-19 cases, deaths and vaccination
+progress over time and compares them across countries.
 
-https://github.com/owid/covid-19-data/blob/master/public/data/owid-covid-data.csv
+## What it does
 
-Download owid-covid-data.csv from the above link.
+- Loads and cleans the Our World in Data COVID-19 dataset
+- Tracks cases, deaths and vaccinations over time for Kenya, the United States
+  and India
+- Compares the three countries on death rate and share of population vaccinated
+- Draws line charts, bar plots and two world choropleth maps
+- Sets out the findings in the notebook alongside the code
 
-Requirements are ;
-- Input file (owid-covid-data.csv)
-- Python 3.13.3
-- pandas for data manipulation
-- seaborn and matplotlib for visualizations
-- plotly.express for choropleth maps
-- nbformat for Jupyter notebook compatibility
+## Built with
 
-Project objectives are ;
-- Import and clean COVID-19 global data
-- Analyze time trends (cases, deaths, vaccinations)
-- Compare metrics across countries/regions
-- Visualize trends with charts and maps
-- Communicate findings in a Jupyter Notebook
+Python 3.13, pandas, seaborn, matplotlib, plotly.express, nbformat
 
-Open the covid_tracker.ipynb in Jupyter and run all the cells to generate the outputs such as the visualisations etc.
+## How to run it
 
-Data was provided by Our World In Data
+1. Download `owid-covid-data.csv` from
+   https://github.com/owid/covid-19-data/blob/master/public/data/owid-covid-data.csv
+   (about 100 MB, so it is not in this repository).
+2. Put the file in the project folder.
+3. `pip install -r requirements.txt`
+4. Open `covid_tracker.ipynb` in Jupyter and run all cells.
 
-This project is licensed under the MIT license 
+## What I found
+
+- The United States recorded the most cases (103.4 million) and deaths (1.19
+  million), then India (45.0 million and 534 thousand), then Kenya (344
+  thousand and 5.7 thousand).
+- Deaths as a share of confirmed cases were highest in Kenya at 1.65 percent,
+  against 1.18 percent for India and 1.15 percent for the United States.
+- The tallest wave in the whole period was the United States in January 2022,
+  at about 800 thousand new cases a day on a 7-day average. India's largest
+  wave was in the first half of 2021, near 400 thousand a day.
+- India shows 67 percent of its population fully vaccinated at the latest
+  date. Kenya and the United States show zero, which is a defect in the
+  cleaning step, not a fact: their latest rows carry no vaccination value and
+  the notebook fills missing values with zero. The fix is to take the last
+  reported value per country. It is noted in the findings cell and is the next
+  change I would make.
+
+## Screenshots
+
+![Total cases over time](docs/total_cases.png)
+
+![Daily new cases, 7-day average](docs/new_cases_7day.png)
+
+## Data
+
+Data from Our World in Data.
+
+## Licence
+
+MIT
+
+## Author
+
+Rehumile Masego Sechele, rehumiles@gmail.com
