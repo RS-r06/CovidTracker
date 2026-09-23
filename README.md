@@ -61,4 +61,4 @@ Data from Our World in Data. Code under the MIT licence.
 
 ## Author
 
-Rehumile Masego Sechele, rehumiles@gmail.com
+Rehumile Sechele, rehumiles@gmail.com
